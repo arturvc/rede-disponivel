@@ -1,4 +1,4 @@
-#rede disponível
+# rede disponível
 A **rede disponível** é um projeto de coleta e visualização geolocalizada de nomes de rede WiFi (SSID)
 [arturvc.net.br/rededisponivel/](http://arturvc.net.br/rededisponivel/)
 
@@ -11,28 +11,28 @@ Para mais informações sobre como ligar e usar o módulo de GPS, neste [link](h
 Para transformar os dados .txt salvo no SD Card para formato .JSON, usado na visualização do mapa, recomendo usar *Regular Expression* (REGEX), principalmente se a quantidade de dados for extensa. Esta [playlist](https://www.youtube.com/watch?v=7DG3kCDx53c&list=PLRqwX-V7Uu6YEypLuls7iidwHMdCM6o2w) do canal *Coding of Train* do Daniel Shiffman tem ótimas explicações e exemplos de uso de REGEX.
 
 A formatação que faço de .txt para .json é um tanto manual e uso uma REGEX por vez, além de deletar alguns eventuais erros:
-procurar: (###\s)(.*?)(\,)\s(.*?)(\,)\s(.*)
+.* procurar: (###\s)(.*?)(\,)\s(.*?)(\,)\s(.*)<br/>
 substituir: $1"hora": "$2",\n"lat": $4,\n"long": $6,\n"redes": [{
 
-procurar: (\[{\n)(\w.*?),\s(-\d{2}),\s(\w*)
+.* procurar: (\[{\n)(\w.*?),\s(-\d{2}),\s(\w*)<br/>
 substituir: $1"nome": "$2",\n"sinal": $3,\n"chave": "$4"\n},
 
-procurar: (\w.*?),\s(-\d{2}),\s(\w*)
+.* procurar: (\w.*?),\s(-\d{2}),\s(\w*)<br/>
 substituir: {\n"nome": "$1",\n"sinal": $2,\n"chave": "$3"\n},
 
-procurar: },\n\s*("hora)
+.* procurar: },\n\s*("hora)<br/>
 substituir: }\n]\n},\n{\n$1
 
-procurar: \[{\n\n\s*{
+.* procurar: \[{\n\n\s*{<br/>
 substituir: [{\n
 
-procurar: .*"hora".*\n.*\n.*\n.*\n\s*("hora)
+.* procurar: .*"hora".*\n.*\n.*\n.*\n\s*("hora)<br/>
 substituir: $1
 
-procurar: ,\n\s*-\d\d.\n.*{\n
+.* procurar: ,\n\s*-\d\d.\n.*{\n<br/>
 substituir:   
 
-procurar: ,\s,\s-\d\d,\s\w{4}\s("hora)
+.* procurar: ,\s,\s-\d\d,\s\w{4}\s("hora)<br/>
 substituir: \n]\n},\n{\n$1
 
 ### Visualização de dados
