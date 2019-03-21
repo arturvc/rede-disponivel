@@ -1,0 +1,40 @@
+body {
+    background-color: #343434;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+    font-size: 1.4em;
+    color: #41ff00;
+}
+
+#teto {
+    min-height: 40px;
+}
+
+#titulo {
+    min-height: 67px;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+    color: gray;
+}
+
+#mapid {
+    height: 505px;
+}
+
+.icone-textual {
+    background: none;
+    border: none;
+    font-size: 1.4em;
+    color: #ffffff;
+    white-space: nowrap;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0px;
+    padding: 0px;
+    font-weight: bold;
+
+}
