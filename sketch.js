@@ -15,12 +15,16 @@ let titulosViewport = [];
 function setup() {
   noCanvas();
   titulo = select('#tituloH1');
-  loadJSON("log.json", carregarJSON);
+  loadJSON("logSSID.json", carregarJSON);
 }
 
 
 function carregarJSON(dados) {
   pontosWiFi = dados;
+  for (var i = 0; i < pontosWiFi.length; i++) {
+    pontosWiFi[i].lat /= 1000000;
+    pontosWiFi[i].long /= 1000000;
+  }
   carregarSSID();
 }
 
