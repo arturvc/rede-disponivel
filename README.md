@@ -8,7 +8,7 @@ Para a coleta dos dados é usado um Arduino com shield de WiFi, módulo de SD Ca
 Para mais informações sobre como ligar e usar o módulo de GPS, neste [link](https://youtu.be/scOAzTiOes4) do canal no YouTube *Brincando com Ideias* há uma explicação sobre o módulo de GPS NEO-6M. 
 
 ### Formatação dos dados
-Para transformar os dados .txt salvo no SD Card para formato .JSON, usado na visualização do mapa, recomendo usar *Regular Expression* (REGEX), principalmente se a quantidade de dados for extensa. Esta [playlist](https://www.youtube.com/watch?v=7DG3kCDx53c&list=PLRqwX-V7Uu6YEypLuls7iidwHMdCM6o2w) do canal *Coding of Train* do Daniel Shiffman tem ótimas explicações e exemplos de uso de REGEX.
+Para transformar os dados .txt salvo no SD Card para formato .JSON, usado na visualização do mapa, recomendo usar *Regular Expression* (REGEX), principalmente se a quantidade de dados for extensa. Esta [playlist](https://www.youtube.com/watch?v=7DG3kCDx53c&list=PLRqwX-V7Uu6YEypLuls7iidwHMdCM6o2w) do canal *The Coding Train* do Daniel Shiffman tem ótimas explicações e exemplos de uso de REGEX.
 
 A formatação que faço de .txt para .json é um tanto manual e uso uma REGEX por vez, além de deletar alguns eventuais erros:  
 * procurar: (###\s)(.*?)(\,)\s(.*?)(\,)\s(.*)<br/>
