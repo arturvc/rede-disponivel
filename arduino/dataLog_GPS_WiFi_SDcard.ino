@@ -89,7 +89,7 @@ void loop() {
 
     // =========================== Gravar no SD Card... ===========================
 
-    arquivo = SD.open("log13mar.txt", FILE_WRITE);
+    arquivo = SD.open("log21mar.txt", FILE_WRITE);
     if (arquivo) {
       arquivo.println(msgGPS);
       arquivo.close();
@@ -146,7 +146,7 @@ void loop() {
       Serial.println(msgSSID);
 
       // =========================== Gravar no SD Card... ===========================
-      arquivo = SD.open("log13mar.txt", FILE_WRITE);
+      arquivo = SD.open("log21mar.txt", FILE_WRITE);
 
       // if the file opened okay, write to it:
       if (arquivo) {
